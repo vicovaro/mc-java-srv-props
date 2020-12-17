@@ -1,12 +1,30 @@
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <p>Auto-resizing sidenav</p>
-        <button mat-raised-button>Toggle extra text</button>
+<mat-drawer-container
+    class="main-container"
+    hasBackdrop="true"
+    [ngStyle]="{ 'height.px': mainContainerHeight }"
+>
+    <mat-drawer #drawer mode="over" [ngStyle]="{ 'width.px': drawerWidth }">
+        <p>Copyright Tai Chen Li</p>
     </mat-drawer>
-
-    <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-            Toggle sidenav
-        </button>
-    </div>
+    <mat-drawer-content>
+        <mat-toolbar color="primary">
+            <button
+                mat-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with menu icon"
+                (click)="drawer.toggle()"
+            >
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span>My App</span>
+            <span class="example-spacer"></span>
+            <button
+                mat-icon-button
+                class="example-icon"
+                aria-label="Example icon-button with share icon"
+            >
+                <mat-icon>share</mat-icon>
+            </button>
+        </mat-toolbar>
+    </mat-drawer-content>
 </mat-drawer-container>
