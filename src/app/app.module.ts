@@ -7,9 +7,11 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { FormsPageComponent } from './components/forms-page/forms-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { DrawerContentComponent } from './components/drawer-content/drawer-content.component';
+import { StepperContentComponent } from './components/stepper-content/stepper-content.component';
 
 @NgModule({
-    declarations: [AppComponent, FormsPageComponent],
+    declarations: [AppComponent, FormsPageComponent, DrawerContentComponent, StepperContentComponent],
     exports: [],
     imports: [
         BrowserModule,
