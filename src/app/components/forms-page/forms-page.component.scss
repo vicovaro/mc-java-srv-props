@@ -1,3 +1,5 @@
+$breakpoint-mobile: 599px;
+
 mat-drawer-container {
     height: 100%;
 }
@@ -10,6 +12,12 @@ mat-drawer-content {
     width: 100%;
 }
 
-span {
+@media (max-width: $breakpoint-mobile) {
+    .mat-toolbar-row, .mat-toolbar-single-row {
+        height: 64px;
+    }
+}
+
+.forms-page-title {
     margin-left: 16px;
 }
