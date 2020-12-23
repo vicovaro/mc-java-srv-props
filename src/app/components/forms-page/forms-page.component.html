@@ -1,11 +1,8 @@
-<mat-drawer-container
-    class="main-container"
-    hasBackdrop="true"
->
+<mat-drawer-container class="main-container" hasBackdrop="true">
     <mat-drawer #drawer mode="over" [ngStyle]="{ 'width.px': drawerWidth }">
         <app-drawer-content></app-drawer-content>
     </mat-drawer>
-     <mat-drawer-content>
+    <mat-drawer-content>
         <mat-toolbar color="primary">
             <button
                 mat-icon-button
@@ -15,15 +12,7 @@
             >
                 <mat-icon>menu</mat-icon>
             </button>
-            <span>Minecraft Java Edition server.properties</span>
-            <span class="example-spacer"></span>
-            <button
-                mat-icon-button
-                class="example-icon"
-                aria-label="Example icon-button with share icon"
-            >
-                <mat-icon>share</mat-icon>
-            </button>
+            <span>server.properties editor</span>
         </mat-toolbar>
         <app-stepper-content></app-stepper-content>
     </mat-drawer-content>

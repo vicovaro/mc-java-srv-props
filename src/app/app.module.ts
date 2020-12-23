@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { DrawerContentComponent } from './components/drawer-content/drawer-content.component';
 import { StepperContentComponent } from './components/stepper-content/stepper-content.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [AppComponent, FormsPageComponent, DrawerContentComponent, StepperContentComponent],
@@ -19,6 +20,7 @@ import { StepperContentComponent } from './components/stepper-content/stepper-co
         ScullyLibModule,
         BrowserAnimationsModule,
         MaterialModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent],
