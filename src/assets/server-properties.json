@@ -1,0 +1,8 @@
+{
+    "allow-flight": { "boolean": [true, false] },
+    "allow-nether": { "boolean": [true, false] },
+    "difficulty": { "string": ["peaceful", "easy", "normal", "hard"] },
+    "gamemode": {
+        "string": ["survival", "creative", "adventure", "spectator"]
+    }
+}
