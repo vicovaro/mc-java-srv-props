@@ -4,5 +4,16 @@
     "difficulty": { "string": ["peaceful", "easy", "normal", "hard"] },
     "gamemode": {
         "string": ["survival", "creative", "adventure", "spectator"]
-    }
+    },
+    "generate-structures": { "boolean": [true, false] },
+    "level-name": {
+        "regex": [
+            "/^([a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9]\\.)+([a-zA-Z0-9]{3,5})$/g"
+        ]
+    },
+    "level-seed": { "regex": [""] },
+    "level-type": {
+        "string": ["default", "flat", "largeBiomes", "amplified", "buffet"]
+    },
+    "max-tick-time": { "number": [60000] }
 }

@@ -7,12 +7,19 @@ import { FormControl } from '@angular/forms';
     styleUrls: ['./stepper-content.component.scss'],
 })
 export class StepperContentComponent {
-    opPermissionLevel = new FormControl();
+    formsServerProperties: FormControl[] = [];
+
+    private readonly propertyNameIndex: number = 0;
+    private readonly propertyTypeIndex: number = 1;
+    private serverProperties: [string, string][] = []; // parsed JSON
 
     constructor(private http: HttpClient) {
-        this.http.get('assets/server-properties.json').subscribe(res => {
-            const jsonHttp = Object.entries(res);
-            console.log(jsonHttp);
+        this.http.get('assets/server-properties.json').subscribe((res) => {
+            this.serverProperties = Object.entries(res);
+            this.serverProperties.forEach((property) => {
+                console.log(property[this.propertyNameIndex]);
+                console.log(property[this.propertyTypeIndex]);
+            });
         });
     }
 }

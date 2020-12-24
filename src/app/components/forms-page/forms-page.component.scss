@@ -1,7 +1,13 @@
 $breakpoint-mobile: 599px;
+$sidebar-drawer-width: 384px;
+$constant-toolbar-height: 64px;
 
 mat-drawer-container {
     height: 100%;
+}
+
+mat-drawer {
+    width: $sidebar-drawer-width;
 }
 
 mat-drawer-content {
@@ -13,8 +19,9 @@ mat-drawer-content {
 }
 
 @media (max-width: $breakpoint-mobile) {
-    .mat-toolbar-row, .mat-toolbar-single-row {
-        height: 64px;
+    .mat-toolbar-row,
+    .mat-toolbar-single-row {
+        height: $constant-toolbar-height;
     }
 }
 
