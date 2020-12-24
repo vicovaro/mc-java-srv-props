@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Server } from 'http';
-import * as ServerProperties from '../../../assets/server-properties.json';
-
 @Component({
     selector: 'app-stepper-content',
     templateUrl: './stepper-content.component.html',
     styleUrls: ['./stepper-content.component.scss'],
 })
-export class StepperContentComponent implements OnInit {
+export class StepperContentComponent {
     opPermissionLevel = new FormControl();
 
-    ngOnInit() {
-        console.log(ServerProperties.default);
-        const object = JSON.parse(ServerProperties);
-        console.log(object);
+    constructor(private http: HttpClient) {
+        this.http.get('assets/server-properties.json').subscribe(res => {
+            const jsonHttp = Object.entries(res);
+            console.log(jsonHttp);
+        });
     }
 }

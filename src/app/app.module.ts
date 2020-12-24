@@ -10,6 +10,7 @@ import { MaterialModule } from './material.module';
 import { DrawerContentComponent } from './components/drawer-content/drawer-content.component';
 import { StepperContentComponent } from './components/stepper-content/stepper-content.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [AppComponent, FormsPageComponent, DrawerContentComponent, StepperContentComponent],
@@ -22,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent],
