@@ -1,19 +1,26 @@
 {
-    "allow-flight": { "boolean": [true, false] },
-    "allow-nether": { "boolean": [true, false] },
-    "difficulty": { "string": ["peaceful", "easy", "normal", "hard"] },
-    "gamemode": {
-        "string": ["survival", "creative", "adventure", "spectator"]
+    "map_configuration": {
+        "allow-flight": { "checkBox": [true, false] },
+        "allow-nether": { "checkBox": [true, false] },
+        "difficulty": { "selector": ["peaceful", "easy", "normal", "hard"] },
+        "gamemode": {
+            "selector": ["survival", "creative", "adventure", "spectator"]
+        },
+        "generate-structures": { "checkBox": [true, false] },
+        "level-name": {
+            "regex": [
+                "/^([a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9]\\.)+([a-zA-Z0-9]{3,5})$/g"
+            ]
+        },
+        "level-seed": { "autocomplete": ["", "-573947210", "2029492581", "2467475923055248755"] },
+        "level-type": {
+            "selector": ["default", "flat", "largeBiomes", "amplified", "buffet"]
+        }
     },
-    "generate-structures": { "boolean": [true, false] },
-    "level-name": {
-        "regex": [
-            "/^([a-zA-Z0-9][-a-zA-Z0-9]*[a-zA-Z0-9]\\.)+([a-zA-Z0-9]{3,5})$/g"
-        ]
-    },
-    "level-seed": { "regex": [""] },
-    "level-type": {
-        "string": ["default", "flat", "largeBiomes", "amplified", "buffet"]
-    },
-    "max-tick-time": { "number": [60000] }
+    "system_administration": {
+        "spawn-protection": { "numberRange": [ "16" , "0" , "50" ] },
+        "max-tick-time": { "number": 60000 },
+        "broadcast-console-to-ops": { "checkBox": [true, false] },
+        "query.port": { "numberRange": [ "25565", "0", "65535"] }
+    }
 }
