@@ -2,41 +2,121 @@
     <mat-step>
         <ng-template matStepLabel>Fill out</ng-template>
 
-        <br>
+        <br />
         <mat-form-field appearance="fill" [color]="spawnProtection.value">
             <mat-label>Spawn protection range</mat-label>
-            <input matInput type="number" placeholder="Ex. 16" [formControl]="spawnProtection" min="0" max="100">
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 16"
+                [formControl]="spawnProtection"
+                min="0"
+                max="100"
+            />
             <span matSuffix>block</span>
-            <mat-error *ngIf="spawnProtection.invalid">Min size of 0 or max size of 100</mat-error>
+            <mat-error *ngIf="spawnProtection.invalid"
+                >Min size of 0 or max size of 100</mat-error
+            >
         </mat-form-field>
-        <br>
+        <br />
         <mat-form-field appearance="fill" [color]="maxTickTime.value">
             <mat-label>Max tick time in millisecond</mat-label>
-            <input matInput type="number" placeholder="Ex. 60000" [formControl]="maxTickTime" min="1000" max="60000">
-            <span matSuffix>block</span>
-            <mat-error *ngIf="maxTickTime.invalid">Min size of 0 or max size of 60000</mat-error>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 60000"
+                [formControl]="maxTickTime"
+                min="1000"
+                max="60000"
+            />
+            <mat-error *ngIf="maxTickTime.invalid"
+                >Min size of 0 or max size of 60000</mat-error
+            >
         </mat-form-field>
-        <br>
+        <br />
         <mat-form-field appearance="fill" [color]="queryPort.value">
             <mat-label>Minecraft port number</mat-label>
-            <input matInput type="number" placeholder="Ex. 25565" [formControl]="queryPort" min="1" max="65535">
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 25565"
+                [formControl]="queryPort"
+                min="1"
+                max="65535"
+            />
             <span matSuffix></span>
-            <mat-error *ngIf="queryPort.invalid">Min size of 1 or max size of 65535</mat-error>
+            <mat-error *ngIf="queryPort.invalid"
+                >Min size of 1 or max size of 65535</mat-error
+            >
         </mat-form-field>
-        <br>
+        <br />
         <mat-form-field appearance="fill">
             <mat-label>Generator settings, USELESS</mat-label>
-            <input matInput type="string" placeholder="Ex. LEAVE IT BLANK" [value]="generatorSettings">
+            <input
+                matInput
+                type="string"
+                placeholder="Ex. LEAVE IT BLANK"
+                [value]="generatorSettings"
+            />
             <span matSuffix>.json</span>
         </mat-form-field>
-        <br>
+        <br />
         <mat-form-field appearance="fill">
             <mat-label>Sync chunk writes</mat-label>
-            <mat-select>
-                <mat-option value="option">Option</mat-option>
+            <mat-select [(value)]="syncChunkWrites">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
             </mat-select>
         </mat-form-field>
-
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Force game mode</mat-label>
+            <mat-select [(value)]="forceGameMode">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Allow Nether</mat-label>
+            <mat-select [(value)]="allowNether">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Allow Nether</mat-label>
+            <mat-select [(value)]="allowNether">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Enforce whitelist</mat-label>
+            <mat-select [(value)]="enforceWhitelist">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Gamemode</mat-label>
+            <mat-select [(value)]="gamemode">
+                <mat-option value="survival">survival</mat-option>
+                <mat-option value="creative">creative</mat-option>
+                <mat-option value="adventure">adventure</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Broadcast console to ops</mat-label>
+            <mat-select [(value)]="broadcastConsoleToOps">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>View</ng-template>

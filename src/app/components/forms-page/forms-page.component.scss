@@ -14,17 +14,20 @@ mat-drawer-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 100%;
     width: 100%;
 }
 
-@media (max-width: $breakpoint-mobile) {
-    .mat-toolbar-row,
-    .mat-toolbar-single-row {
-        height: $constant-toolbar-height;
-    }
+.toolbar {
+    position: absolute;
+    height: $constant-toolbar-height;
 }
 
-.forms-page-title {
+.toolbar-title {
     margin-left: 16px;
+}
+
+.content {
+    position: absolute;
+    top: $constant-toolbar-height;
+    height: 100%;
 }

@@ -13,7 +13,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    declarations: [AppComponent, FormsPageComponent, DrawerContentComponent, StepperContentComponent],
+    declarations: [
+        AppComponent,
+        FormsPageComponent,
+        DrawerContentComponent,
+        StepperContentComponent,
+    ],
     exports: [],
     imports: [
         BrowserModule,
@@ -23,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
