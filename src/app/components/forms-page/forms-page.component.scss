@@ -31,5 +31,5 @@ mat-drawer-content {
 .content {
     position: absolute;
     top: $constant-toolbar-height;
-    height: 100%;
+    height: calc(100% - $constant-toolbar-height);
 }

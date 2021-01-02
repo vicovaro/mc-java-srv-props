@@ -26,4 +26,22 @@ export class StepperContentComponent {
     enforceWhitelist = 'false';
     gamemode = 'survival';
     broadcastConsoleToOps = 'true';
+    enableQuery = 'false';
+    playerIdleTimeout = new FormControl(0, [
+        Validators.min(0),
+        Validators.max(1440),
+    ]);
+    difficulty = 'easy';
+    spawnMonsters = 'true';
+    broadcastRconToOps = 'true';
+    opPermissionLevel = '4';
+    pvp = 'true';
+    entityBroadcastRangePercentage = new FormControl(100, [
+        Validators.min(0),
+        Validators.max(500),
+    ]);
+    snooperEnabled = 'true';
+    levelType = 'default';
+    hardcore = 'false';
+    enableStatus = 'true';
 }

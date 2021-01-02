@@ -29,6 +29,7 @@
                 min="1000"
                 max="60000"
             />
+            <span matSuffix>ms</span>
             <mat-error *ngIf="maxTickTime.invalid"
                 >Min size of 0 or max size of 60000</mat-error
             >
@@ -105,6 +106,125 @@
         <mat-form-field appearance="fill">
             <mat-label>Broadcast console to ops</mat-label>
             <mat-select [(value)]="broadcastConsoleToOps">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Enable query</mat-label>
+            <mat-select [(value)]="enableQuery">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill" [color]="playerIdleTimeout.value">
+            <mat-label>Player idle timeout</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 0"
+                [formControl]="playerIdleTimeout"
+                min="0"
+                max="1440"
+            />
+            <span matSuffix>min</span>
+            <mat-error *ngIf="playerIdleTimeout.invalid"
+                >Min size of 0 or max size of 1440</mat-error
+            >
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Difficulty</mat-label>
+            <mat-select [(value)]="difficulty">
+                <mat-option value="peaceful">peaceful</mat-option>
+                <mat-option value="easy">easy</mat-option>
+                <mat-option value="normal">normal</mat-option>
+                <mat-option value="hard">hard</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Spawn monsters</mat-label>
+            <mat-select [(value)]="spawnMonsters">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Broadcast rcon to ops</mat-label>
+            <mat-select [(value)]="broadcastRconToOps">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Op permission level</mat-label>
+            <mat-select [(value)]="opPermissionLevel">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>PVP</mat-label>
+            <mat-select [(value)]="pvp">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill" [color]="entityBroadcastRangePercentage.value">
+            <mat-label>Entity broadcast range percentage</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 100"
+                [formControl]="entityBroadcastRangePercentage"
+                min="0"
+                max="500"
+            />
+            <span matSuffix></span>
+            <mat-error *ngIf="entityBroadcastRangePercentage.invalid"
+                >Min size of 0 or max size of 500</mat-error
+            >
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Snooper enabled</mat-label>
+            <mat-select [(value)]="snooperEnabled">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Level type</mat-label>
+            <mat-select [(value)]="levelType">
+                <mat-option value="default">default</mat-option>
+                <mat-option value="flat">flat</mat-option>
+                <mat-option value="largeBiomes">largeBiomes</mat-option>
+                <mat-option value="amplified">amplified</mat-option>
+                <mat-option value="buffet">buffet</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Hardcore</mat-label>
+            <mat-select [(value)]="hardcore">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Enable status</mat-label>
+            <mat-select [(value)]="enableStatus">
                 <mat-option value="true">true</mat-option>
                 <mat-option value="false">false</mat-option>
             </mat-select>
