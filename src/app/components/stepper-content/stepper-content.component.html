@@ -86,14 +86,6 @@
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill">
-            <mat-label>Allow Nether</mat-label>
-            <mat-select [(value)]="allowNether">
-                <mat-option value="true">true</mat-option>
-                <mat-option value="false">false</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <br />
-        <mat-form-field appearance="fill">
             <mat-label>Enforce whitelist</mat-label>
             <mat-select [(value)]="enforceWhitelist">
                 <mat-option value="true">true</mat-option>
@@ -119,8 +111,8 @@
         </mat-form-field>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>View</ng-template>
-        <p>You are now done.</p>
+        <ng-template matStepLabel>Review</ng-template>
+        <p>Copy paste the following into a file named "server.properties".</p>
         <div>
             <button
                 class="last-step-buttons"

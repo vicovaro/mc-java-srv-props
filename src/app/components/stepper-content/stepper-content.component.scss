@@ -1,5 +1,11 @@
+$input-fixed-width: 201px;
+
 :host {
     width: 100%;
+}
+
+mat-form-field {
+    width: $input-fixed-width;
 }
 
 .last-step-buttons {

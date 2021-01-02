@@ -20,6 +20,8 @@ mat-drawer-content {
 .toolbar {
     position: absolute;
     height: $constant-toolbar-height;
+    box-shadow: 0px 1px 18px grey;
+    z-index: 1; // we need the toolbar to be slightly above to have the shadow effect working
 }
 
 .toolbar-title {

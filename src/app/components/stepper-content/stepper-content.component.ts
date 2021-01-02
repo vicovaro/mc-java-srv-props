@@ -26,6 +26,4 @@ export class StepperContentComponent {
     enforceWhitelist = 'false';
     gamemode = 'survival';
     broadcastConsoleToOps = 'true';
-
-    constructor() {}
 }
