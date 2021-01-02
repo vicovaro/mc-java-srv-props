@@ -1,41 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { default as ServerProperties } from '@assets/server-properties.json';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
-export interface AutocompleteForms {
-    value: string;
-    options: Array<string>;
-    filteredOptions: Observable<string[]>;
-}
-export interface SelectedForms {
-    value: string;
-    options: Array<string>;
-}
-export interface NumberRangeForms {
-    value: number;
-    min: number;
-    max: number;
-}
 @Component({
     selector: 'app-stepper-content',
     templateUrl: './stepper-content.component.html',
     styleUrls: ['./stepper-content.component.scss'],
 })
-export class StepperContentComponent implements OnInit {
-    checkBoxForms: Map<string, boolean> = new Map();
-    regexForms: Map<string, FormControl> = new Map();
-    autocompleteForms: Map<string, AutocompleteForms> = new Map();
-    selectorForms: Map<string, SelectedForms> = new Map();
-    numberRange: Map<string, NumberRangeForms > = new Map();
+export class StepperContentComponent {
+    spawnProtection = new FormControl(16, [Validators.min(0), Validators.max(100)]);
+    maxTickTime = new FormControl(60000, [Validators.min(1000), Validators.max(60000)]);
+    queryPort = new FormControl(25565, [Validators.min(1), Validators.max(65535)]);
+    generatorSettings = '';
+    syncChunkWrites = true;
 
-    constructor() {}
-
-    ngOnInit() {
-        const serverProperties = Object.entries(ServerProperties);
-        console.log(serverProperties);
-        serverProperties.forEach(property => {
-            console.log(property);
-        });
+    constructor() {
     }
 }
