@@ -1,4 +1,4 @@
-<mat-horizontal-stepper linear="true" #stepper>
+<mat-horizontal-stepper linear="true" #stepper (click)="onInputChange()">
     <mat-step>
         <ng-template matStepLabel>Fill out</ng-template>
 
@@ -154,7 +154,7 @@
         </mat-form-field>
         <br />
         <mat-form-field appearance="fill">
-            <mat-label>Broadcast rcon to ops</mat-label>
+            <mat-label>Broadcast RCON to ops</mat-label>
             <mat-select [(value)]="broadcastRconToOps">
                 <mat-option value="true">true</mat-option>
                 <mat-option value="false">false</mat-option>
@@ -179,7 +179,10 @@
             </mat-select>
         </mat-form-field>
         <br />
-        <mat-form-field appearance="fill" [color]="entityBroadcastRangePercentage.value">
+        <mat-form-field
+            appearance="fill"
+            [color]="entityBroadcastRangePercentage.value"
+        >
             <mat-label>Entity broadcast range percentage</mat-label>
             <input
                 matInput
@@ -229,10 +232,237 @@
                 <mat-option value="false">false</mat-option>
             </mat-select>
         </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Enable command block</mat-label>
+            <mat-select [(value)]="enableCommandBlock">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Max players</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 20"
+                [formControl]="maxPlayer"
+                min="0"
+                max="100"
+            />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>network-compression-threshold</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 256"
+                [formControl]="networkCompressionThreshold"
+                min="0"
+                max="65535"
+            />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Resource pack sha1</mat-label>
+            <input matInput type="text" [formControl]="resourcePackSha1" />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Max world size</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 29999984"
+                [formControl]="maxWorldSize"
+                min="0"
+                max="29999984"
+            />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Function permission level</mat-label>
+            <mat-select [(value)]="functionPermissionLevel">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>RCON port</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 25575"
+                [formControl]="rconPort"
+                min="1"
+                max="65534"
+            />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Server port</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 19132"
+                [formControl]="serverPort"
+                min="1"
+                max="65535"
+            />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Debug</mat-label>
+            <mat-select [(value)]="debug">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Server IP</mat-label>
+            <input matInput type="text" [formControl]="serverIp" />
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>spawn npcs</mat-label>
+            <mat-select [(value)]="spawnNpcs">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Allow flight</mat-label>
+            <mat-select [(value)]="allowFlight">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Level name</mat-label>
+            <input matInput type="text" [formControl]="levelName" value="world"/>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>View distance</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 10"
+                [formControl]="viewDistance"
+                min="3"
+                max="32"
+            />
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>Resource pack</mat-label>
+            <input matInput type="text" [formControl]="resourcePack" />
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>Spawn animals</mat-label>
+            <mat-select [(value)]="spawnAnimals">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>White list</mat-label>
+            <mat-select [(value)]="whiteList">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>RCON password</mat-label>
+            <input matInput type="text" [formControl]="rconPassword" />
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>Generate structures</mat-label>
+            <mat-select [(value)]="generateStructures">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill">
+            <mat-label>Max build height</mat-label>
+            <input
+                matInput
+                type="number"
+                placeholder="Ex. 256"
+                [formControl]="maxBuildHeight"
+                min="0"
+                max="256"
+                step="8"
+            />
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>Online mode</mat-label>
+            <mat-select [(value)]="onlineMode">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>Level seed</mat-label>
+            <input matInput type="text" [formControl]="levelSeed" />
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>use-native-transport</mat-label>
+            <mat-select [(value)]="useNativeTransport">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>prevent-proxy-connections</mat-label>
+            <mat-select [(value)]="preventProxyConnections">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>enable-jmx-monitoring</mat-label>
+            <mat-select [(value)]="enableJmxMonitoring">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>enable-rcon</mat-label>
+            <mat-select [(value)]="enableRcon">
+                <mat-option value="true">true</mat-option>
+                <mat-option value="false">false</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>motd</mat-label>
+            <input matInput type="text" [formControl]="motd" value="A Minecraft Server"/>
+        </mat-form-field>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Review</ng-template>
         <p>Copy paste the following into a file named "server.properties".</p>
+        <pre [innerHTML]="code"></pre>
         <div>
             <button
                 class="last-step-buttons"
@@ -240,13 +470,6 @@
                 matStepperPrevious
             >
                 Back
-            </button>
-            <button
-                class="last-step-buttons"
-                mat-raised-button
-                (click)="stepper.reset()"
-            >
-                Reset
             </button>
         </div>
     </mat-step>
