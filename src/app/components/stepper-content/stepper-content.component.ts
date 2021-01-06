@@ -60,7 +60,8 @@ export class StepperContentComponent {
         Validators.max(65535),
         Validators.required,
     ]);
-    resourcePackSha1 = new FormControl('', [Validators.pattern('/^[a-z0-9A-Z]+$')]);
+    // https://www.regextester.com/104339
+    resourcePackSha1 = new FormControl('', [Validators.pattern('(\\\\?([^\\/]*[\\/])*)([^\\/]+)$')]);
     maxWorldSize = new FormControl(29999984,[Validators.min(0),
         Validators.max(29999984),
         Validators.required,
@@ -82,19 +83,22 @@ export class StepperContentComponent {
         Validators.required,
     ]);
     debug ='false';
-    serverIp = new FormControl('', [Validators.pattern('/^[a-z0-9A-Z]+$')]);
+    // https://mkyong.com/regular-expressions/how-to-validate-ip-address-with-regular-expression/
+    serverIp = new FormControl('', [Validators.pattern('^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\\.(?!$)|$)){4}$')]);
     spawnNpcs ='true';
     allowFlight ='false';
-    levelName = new FormControl('world', [Validators.pattern('/^[a-z0-9A-Z]+$')]);
+    levelName = new FormControl('world', [Validators.pattern('^[a-zA-Z][A-Za-z0-9_-]+$')]);
     viewDistance = new FormControl(10,[
         Validators.min(3),
         Validators.max(32),
         Validators.required,
     ]);
-    resourcePack = new FormControl('', [Validators.pattern('/^[a-z0-9A-Z]$')]);
+    // https://www.regextester.com/104339
+    resourcePack = new FormControl('', [Validators.pattern('(\\\\?([^\\/]*[\\/])*)([^\\/]+)$')]);
     spawnAnimals = 'true';
     whiteList ='false';
-    rconPassword = new FormControl('', [ Validators.pattern('/^[a-z0-9A-Z]{6,32}$'),Validators.minLength(6)]);
+    rconPassword = new FormControl('', [ Validators.pattern('^[a-z0-9A-Z]+$'),
+    Validators.required,]);
     generateStructures='true';
     maxBuildHeight = new FormControl(256,
         [Validators.min(0),
@@ -102,12 +106,12 @@ export class StepperContentComponent {
         Validators.required,
     ]);
     onlineMode ='true';
-    levelSeed = new FormControl('', [Validators.pattern('/^[a-z0-9A-Z]$')]);
+    levelSeed = new FormControl('', [Validators.pattern('^(?! )[a-z0-9A-Z _-]+(?<! )$')]);
     useNativeTransport ='true';
     preventProxyConnections ='false';
     enableJmxMonitoring ='false';
     enableRcon ='false';
-    motd = new FormControl('A Minecraft Server', [Validators.pattern('/^[a-z0-9A-Z]$'),Validators.maxLength(59)]);
+    motd = new FormControl('A Minecraft Server', [Validators.pattern('^.*$'),Validators.maxLength(59)]);
     code = ``;
 
     onInputChange() {
